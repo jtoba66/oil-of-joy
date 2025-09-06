@@ -52,6 +52,26 @@
             right: -3rem;
         }
         
+        /* Mobile-specific decorative border adjustments */
+        @media (max-width: 640px) {
+            .decorative-border::before {
+                left: -2rem;
+                font-size: 1rem;
+            }
+            
+            .decorative-border::after {
+                right: -2rem;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .decorative-border::before,
+            .decorative-border::after {
+                display: none;
+            }
+        }
+        
         .gradient-gold {
             background: linear-gradient(135deg, var(--gold) 0%, var(--bronze) 100%);
         }
@@ -67,6 +87,18 @@
         .hover-lift:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(107, 30, 75, 0.2);
+        }
+        
+        /* Mobile touch-friendly hover effects */
+        @media (hover: none) and (pointer: coarse) {
+            .hover-lift:hover {
+                transform: none;
+            }
+            
+            .hover-lift:active {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(107, 30, 75, 0.2);
+            }
         }
         
         .musical-note {
@@ -105,6 +137,8 @@
         
         .nav-link {
             transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
         }
         
         .nav-link:hover {
@@ -112,10 +146,26 @@
             transform: scale(1.05);
         }
         
+        /* Mobile-friendly navigation */
+        @media (max-width: 768px) {
+            .nav-link {
+                padding: 0.75rem 1rem;
+                margin: 0.25rem;
+                display: block;
+                text-align: center;
+            }
+            
+            .nav-link:hover {
+                transform: none;
+                background-color: rgba(212, 175, 55, 0.1);
+            }
+        }
+        
         .form-input {
             border: 2px solid transparent;
             background: rgba(255, 255, 255, 0.9);
             transition: all 0.3s ease;
+            min-height: 44px; /* Touch-friendly minimum height */
         }
         
         .form-input:focus {
@@ -124,14 +174,40 @@
             box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
         }
         
+        /* Mobile-specific form improvements */
+        @media (max-width: 768px) {
+            .form-input {
+                font-size: 16px; /* Prevents zoom on iOS */
+                min-height: 48px;
+            }
+        }
+        
         .btn-primary {
             background: linear-gradient(135deg, var(--gold) 0%, var(--bronze) 100%);
             transition: all 0.3s ease;
+            min-height: 44px;
         }
         
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Mobile-friendly button */
+        @media (max-width: 768px) {
+            .btn-primary {
+                min-height: 48px;
+                font-size: 1rem;
+                padding: 1rem 2rem;
+            }
+            
+            .btn-primary:hover {
+                transform: none;
+            }
+            
+            .btn-primary:active {
+                transform: translateY(1px);
+            }
         }
         
         .package-card {
@@ -146,7 +222,109 @@
             background: white;
         }
         
-         {
+        /* Mobile-specific package card adjustments */
+        @media (max-width: 768px) {
+            .package-card {
+                margin-bottom: 1rem;
+            }
+            
+            .package-card:hover {
+                border-color: rgba(212, 175, 55, 0.2);
+                background: rgba(255, 255, 255, 0.95);
+            }
+            
+            .package-card:active {
+                border-color: var(--gold);
+                background: white;
+            }
+        }
+        
+        /* Mobile navigation improvements */
+        @media (max-width: 640px) {
+            nav .flex {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav .space-x-8 > * + * {
+                margin-left: 0.5rem;
+            }
+        }
+        
+        /* Mobile typography adjustments */
+        @media (max-width: 640px) {
+            .script-font {
+                font-size: 2.5rem !important;
+                line-height: 1.2;
+            }
+            
+            .elegant-font.text-4xl,
+            .elegant-font.text-5xl,
+            .elegant-font.text-6xl {
+                font-size: 2rem !important;
+                line-height: 1.3;
+            }
+            
+            h3.elegant-font {
+                font-size: 1.75rem !important;
+            }
+        }
+        
+        /* Mobile spacing improvements */
+        @media (max-width: 768px) {
+            .py-16 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            
+            .px-4 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .mb-12 {
+                margin-bottom: 2rem;
+            }
+            
+            .space-y-6 > * + * {
+                margin-top: 1rem;
+            }
+        }
+        
+        /* Touch-friendly contact links */
+        @media (max-width: 768px) {
+            footer a {
+                display: inline-block;
+                padding: 0.5rem;
+                margin: 0.25rem;
+                border-radius: 0.5rem;
+                transition: background-color 0.3s ease;
+            }
+            
+            footer a:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+        
+        /* Ensure text remains readable on mobile */
+        @media (max-width: 480px) {
+            .text-lg {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            
+            .text-xl {
+                font-size: 1.125rem;
+                line-height: 1.5;
+            }
+            
+            .text-2xl {
+                font-size: 1.375rem;
+                line-height: 1.4;
+            }
+        }
+        
+        @media print {
             * {
                 -webkit-print-color-adjust: exact !important;
                 color-adjust: exact !important;
@@ -528,8 +706,8 @@
                         <i class="fas fa-envelope text-2xl"></i>
                     </div>
                     <h4 class="font-semibold text-xl mb-2">Email</h4>
-                    <a href="/cdn-cgi/l/email-protection#93fcfafffcf5f9fceafee6e0faf0d3f4fef2faffbdf0fcfe" class="text-lg hover:text-yellow-300 transition-colors">
-                        <span class="__cf_email__" data-cfemail="76191f1a19101c190f1b03051f1536111b171f1a5815191b">[email&#160;protected]</span>
+                    <a href="mailto:oilofjoymusic@gmail.com" class="text-lg hover:text-yellow-300 transition-colors">
+                        oilofjoymusic@gmail.com
                     </a>
                 </div>
 
@@ -564,7 +742,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -630,15 +808,5 @@
             note.style.animationDelay = `${index * 0.5}s`;
         });
     </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"97b1437a7d6936d0","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.8.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
 </body>
 </html>
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDprsqNEFdHESyMqITktDbKPpbaPXRgpXYK0AexMl4FALWzMuiblUnHC6%2FeWrrr6HGrBBFjL6Fx%2FtXUYa4rCXK8XpURnsRDBWcq3G%2F3fw%2FHq0iqi950iHdUJqqBW65oC7%2BnoZOV8jK4MRBjAhXZz8Zygc9Z%2BYrYz3c3%2FpBbnFv9iIVO7wnM7tjkir5rdSAUr%2FzoVbiIZvfYtS6%2F8dfwvaUPVTF6181eHXPSf8hLJF6j88BWYmisutVVexENgJifv9rVqHXISskqg5kdBni0zRg6YQ7i4jKBUmrq85wAXRrpHlg%2Bp17WxIXRTPYK1PXKEx2Uxk6%2BuCJB9rNBUDEpcwOsprFjtumM8yNlXZut63WV9vVuzRBRPvvk3MVhYyz2H6V4KAcm%2B4HrOvN2%2BTGX9plydGxQZ6qSTMYtCvwLxIiG4fpUPvaGfkxo4P0t4eBciytDsDctzjdyoJesDV4Vu5ZnMiDgsDCHoWB5u%2BS9ndf1a%2BrkzKVVimYWqpc0H%2BgNlDBw%3D%3D";
-        window.__genspark_locale = "en-US";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDprsqNEFdHESyMqITktDbKPpbaPXRgpXYK0AexMl4FALWzMuiblUnHC6/eWrrr6HGrBBFjL6Fx/tXUYa4rCXK8XpURnsRDBWcq3G/3fw/Hq0iqi950iHdUJqqBW65oC7+noZOV8jK4MRBjAhXZz8Zygc9Z+YrYz3c3/pBbnFv9iIVO7wnM7tjkir5rdSAUr/zoVbiIZvfYtS6/8dfwvaUPVTF6181eHXPSf8hLJF6j88BWYmisutVVexENgJifv9rVqHXISskqg5kdBni0zRg6YQ7i4jKBUmrq85wAXRrpHlg+p17WxIXRTPYK1PXKEx2Uxk6+uCJB9rNBUDEpcwOsprFjtumM8yNlXZut63WV9vVuzRBRPvvk3MVhYyz2H6V4KAcm+4HrOvN2+TGX9plydGxQZ6qSTMYtCvwLxIiG4fpUPvaGfkxo4P0t4eBciytDsDctzjdyoJesDV4Vu5ZnMiDgsDCHoWB5u+S9ndf1a+rkzKVVimYWqpc0H+gNlDBw==";
-    </script>
-    
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    
