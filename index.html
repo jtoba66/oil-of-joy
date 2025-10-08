@@ -587,37 +587,40 @@
             </div>
 
             <div class="bg-white bg-opacity-90 rounded-2xl shadow-xl p-8 md:p-12">
-                <form class="space-y-6">
+                <!-- UPDATED FORM: only changes are action/method, names, id, and hidden _captcha -->
+                <form id="booking-form" action="https://formsubmit.co/ajax/ifeniran@gmail.com" method="POST" class="space-y-6">
+                    <input type="hidden" name="_captcha" value="false">
+
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium purple-text mb-2">Full Name *</label>
-                            <input type="text" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Your full name">
+                            <input type="text" name="full_name" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Your full name">
                         </div>
                         <div>
                             <label class="block text-sm font-medium purple-text mb-2">Email Address *</label>
-                            <input type="email" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="your@email.com">
+                            <input type="email" name="email" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="your@email.com">
                         </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium purple-text mb-2">Phone Number *</label>
-                            <input type="tel" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="(403) 000-0000">
+                            <input type="tel" name="phone" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="(403) 000-0000">
                         </div>
                         <div>
                             <label class="block text-sm font-medium purple-text mb-2">Event Date *</label>
-                            <input type="date" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
+                            <input type="date" name="event_date" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
                         </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium purple-text mb-2">Event Start Time *</label>
-                            <input type="time" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
+                            <input type="time" name="event_start_time" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
                         </div>
                         <div>
                             <label class="block text-sm font-medium purple-text mb-2">Expected Duration</label>
-                            <select class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
+                            <select name="duration" class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
                                 <option>1 hour</option>
                                 <option>1.5 hours</option>
                                 <option>2 hours</option>
@@ -633,7 +636,7 @@
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium purple-text mb-2">Venue Type *</label>
-                            <select required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
+                            <select name="venue_type" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
                                 <option value="">Select venue type</option>
                                 <option>Private Residence</option>
                                 <option>Community Hall</option>
@@ -645,7 +648,7 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium purple-text mb-2">Preferred Package</label>
-                            <select class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
+                            <select name="preferred_package" class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
                                 <option value="">Select a package</option>
                                 <option>Shalom Package ($650)</option>
                                 <option>Hallelujah Package ($1,000)</option>
@@ -660,12 +663,12 @@
 
                     <div>
                         <label class="block text-sm font-medium purple-text mb-2">Venue Location *</label>
-                        <input type="text" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Full address or general area (e.g., Calgary NW, Airdrie, etc.)">
+                        <input type="text" name="venue_location" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Full address or general area (e.g., Calgary NW, Airdrie, etc.)">
                     </div>
 
                     <div>
                         <label class="block text-sm font-medium purple-text mb-2">Event Details & Special Requests</label>
-                        <textarea rows="4" class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Tell us about your event, any special songs you'd like, accessibility requirements, or other details that would help us serve you better..."></textarea>
+                        <textarea name="event_details" rows="4" class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Tell us about your event, any special songs you'd like, accessibility requirements, or other details that would help us serve you better..."></textarea>
                     </div>
 
                     <div class="text-center pt-6">
@@ -742,8 +745,17 @@
         </div>
     </footer>
 
+    <!-- Thank You Modal (added) -->
+    <div id="thankyouModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 opacity-0 transition-opacity duration-500">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md text-center border-2 transform scale-95 transition-all duration-500" style="border-color: var(--gold);">
+            <h3 class="elegant-font text-2xl font-bold purple-text mb-4">Thank You!</h3>
+            <p class="text-gray-700 mb-6">Your booking request has been received.<br>We’ll contact you within 24 hours.</p>
+            <button onclick="closeModal()" class="btn-primary text-white px-6 py-2 rounded-full shadow-md">Close</button>
+        </div>
+    </div>
+
     <script>
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for navigation links (unchanged)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -757,33 +769,50 @@
             });
         });
 
-        // Form validation and submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simple validation
-            const requiredFields = this.querySelectorAll('[required]');
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.style.borderColor = '#ef4444';
-                } else {
-                    field.style.borderColor = '#d1d5db';
+        // ---- UPDATED: Form submission via FormSubmit (AJAX) + modal (replaces old alert flow) ----
+        const bookingForm = document.getElementById('booking-form');
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Simple validation (kept from your original)
+                const requiredFields = bookingForm.querySelectorAll('[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.style.borderColor = '#ef4444';
+                    } else {
+                        field.style.borderColor = '#d1d5db';
+                    }
+                });
+                
+                if (!isValid) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+
+                try {
+                    const response = await fetch(bookingForm.action, {
+                        method: bookingForm.method,
+                        body: new FormData(bookingForm),
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (response.ok) {
+                        bookingForm.reset();
+                        showModal();
+                    } else {
+                        alert('Oops! Something went wrong. Please try again.');
+                    }
+                } catch (error) {
+                    alert('Error submitting form. Please try again.');
                 }
             });
-            
-            if (isValid) {
-                // Here you would typically send the form data to a server
-                alert('Thank you for your booking request! We will contact you within 24 hours.');
-                this.reset();
-            } else {
-                alert('Please fill in all required fields.');
-            }
-        });
+        }
 
-        // Add fade-in animation to elements as they come into view
+        // Add fade-in animation to elements as they come into view (unchanged)
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -798,15 +827,41 @@
             });
         }, observerOptions);
 
-        // Observe all sections for animation
+        // Observe all sections for animation (unchanged)
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
 
-        // Add floating animation to musical notes
+        // Add floating animation to musical notes (unchanged)
         document.querySelectorAll('.musical-note').forEach((note, index) => {
             note.style.animationDelay = `${index * 0.5}s`;
         });
+
+        // Modal helpers (added)
+        function showModal() {
+            const modal = document.getElementById("thankyouModal");
+            modal.classList.remove("hidden");
+            setTimeout(() => {
+                modal.classList.remove("opacity-0");
+                modal.querySelector("div").classList.remove("scale-95");
+                modal.querySelector("div").classList.add("scale-100");
+            }, 10);
+
+            // Auto-close after 5 seconds
+            setTimeout(() => {
+                closeModal();
+            }, 5000);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("thankyouModal");
+            modal.classList.add("opacity-0");
+            modal.querySelector("div").classList.remove("scale-100");
+            modal.querySelector("div").classList.add("scale-95");
+            setTimeout(() => {
+                modal.classList.add("hidden");
+            }, 500);
+        }
     </script>
 </body>
 </html>
