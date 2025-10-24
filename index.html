@@ -1,598 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oil of Joy Music - Calgary's Premier Christian Praise & Worship Band</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --bronze: #CD7F32;
-            --deep-purple: #6B1E4B;
-            --burgundy: #722F37;
-            --cream: #FFF8DC;
-            --warm-white: #FFFEF7;
-        }
-
-        body {
-            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-white) 100%);
-            font-family: 'Inter', sans-serif;
-        }
-
-        .script-font { font-family: 'Dancing Script', cursive; }
-        .elegant-font { font-family: 'Playfair Display', serif; }
-
-        .decorative-border { position: relative; }
-        .decorative-border::before,
-        .decorative-border::after {
-            content: '❦';
-            color: var(--gold);
-            font-size: 1.5rem;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .decorative-border::before { left: -3rem; }
-        .decorative-border::after { right: -3rem; }
-
-        @media (max-width: 640px) {
-            .decorative-border::before { left: -2rem; font-size: 1rem; }
-            .decorative-border::after { right: -2rem; font-size: 1rem; }
-        }
-        @media (max-width: 480px) {
-            .decorative-border::before, .decorative-border::after { display: none; }
-        }
-
-        .gradient-gold { background: linear-gradient(135deg, var(--gold) 0%, var(--bronze) 100%); }
-        .gradient-purple { background: linear-gradient(135deg, var(--deep-purple) 0%, var(--burgundy) 100%); }
-
-        .hover-lift { transition: all 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(107, 30, 75, 0.2); }
-        @media (hover: none) and (pointer: coarse) {
-            .hover-lift:hover { transform: none; }
-            .hover-lift:active { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(107, 30, 75, 0.2); }
-        }
-
-        .musical-note { animation: float 3s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-
-        .fade-in { opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s ease forwards; }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-
-        .gold-text { color: var(--gold); }
-        .purple-text { color: var(--deep-purple); }
-        .burgundy-text { color: var(--burgundy); }
-
-        .nav-link { transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 0.5rem; }
-        .nav-link:hover { color: var(--gold) !important; transform: scale(1.05); }
-        @media (max-width: 768px) {
-            .nav-link { padding: 0.75rem 1rem; margin: 0.25rem; display: block; text-align: center; }
-            .nav-link:hover { transform: none; background-color: rgba(212, 175, 55, 0.1); }
-        }
-
-        .form-input { border: 2px solid transparent; background: rgba(255, 255, 255, 0.9); transition: all 0.3s ease; min-height: 44px; }
-        .form-input:focus { border-color: var(--gold); background: white; box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1); }
-        @media (max-width: 768px) { .form-input { font-size: 16px; min-height: 48px; } }
-
-        .btn-primary { background: linear-gradient(135deg, var(--gold) 0%, var(--bronze) 100%); transition: all 0.3s ease; min-height: 44px; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4); }
-        @media (max-width: 768px) {
-            .btn-primary { min-height: 48px; font-size: 1rem; padding: 1rem 2rem; }
-            .btn-primary:hover { transform: none; }
-            .btn-primary:active { transform: translateY(1px); }
-        }
-
-        /* ===== Luxe tweaks just for the Plans section ===== */
-        .package-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.25);
-            transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
-        }
-        .package-card:hover {
-            border-color: var(--gold);
-            box-shadow: 0 14px 40px rgba(107, 30, 75, 0.18), inset 0 0 0 1px rgba(212, 175, 55, 0.35);
-            transform: translateY(-6px);
-        }
-        .soft-gold-divider {
-            height: 1px;
-            background: linear-gradient(90deg, rgba(212,175,55,0), rgba(212,175,55,0.55), rgba(212,175,55,0));
-        }
-        .badge-premium { letter-spacing: .02em; }
-
-        @media (max-width: 768px) {
-            .package-card { margin-bottom: 1rem; }
-            .package-card:hover { border-color: rgba(212, 175, 55, 0.25); box-shadow: none; transform: none; }
-            .package-card:active { border-color: var(--gold); }
-        }
-
-        @media (max-width: 640px) { nav .flex { flex-wrap: wrap; justify-content: center; } nav .space-x-8 > * + * { margin-left: 0.5rem; } }
-
-        @media (max-width: 640px) {
-            .script-font { font-size: 2.5rem !important; line-height: 1.2; }
-            .elegant-font.text-4xl, .elegant-font.text-5xl, .elegant-font.text-6xl { font-size: 2rem !important; line-height: 1.3; }
-            h3.elegant-font { font-size: 1.75rem !important; }
-        }
-
-        @media (max-width: 768px) {
-            .py-16 { padding-top: 3rem; padding-bottom: 3rem; }
-            .px-4 { padding-left: 1rem; padding-right: 1rem; }
-            .mb-12 { margin-bottom: 2rem; }
-            .space-y-6 > * + * { margin-top: 1rem; }
-        }
-
-        @media (max-width: 480px) {
-            .text-lg { font-size: 1rem; line-height: 1.5; }
-            .text-xl { font-size: 1.125rem; line-height: 1.5; }
-            .text-2xl { font-size: 1.375rem; line-height: 1.4; }
-        }
-
-        @media print { * { -webkit-print-color-adjust: exact !important; color-adjust: exact !important; } }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oil of Joy Music - Calgary's Premier Christian Praise & Worship Band</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #D4AF37;
+      --bronze: #CD7F32;
+      --deep-purple: #6B1E4B;
+      --burgundy: #722F37;
+      --cream: #FFF8DC;
+      --warm-white: #FFFEF7;
+    }
+    body {
+      background: linear-gradient(135deg, var(--cream) 0%, var(--warm-white) 100%);
+      font-family: 'Inter', sans-serif;
+    }
+    .script-font { font-family: 'Dancing Script', cursive; }
+    .elegant-font { font-family: 'Playfair Display', serif; }
+    .gold-text { color: var(--gold); }
+    .purple-text { color: var(--deep-purple); }
+    .hover-lift { transition: all 0.3s ease; }
+    .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(107,30,75,0.2); }
+    .package-card {
+      background: rgba(255,255,255,0.95);
+      border: 1px solid rgba(212,175,55,0.25);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    .package-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 14px 40px rgba(107,30,75,0.18);
+    }
+    .soft-gold-divider {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(212,175,55,0), rgba(212,175,55,0.55), rgba(212,175,55,0));
+    }
+  </style>
 </head>
-<body>
-    <!-- Header -->
-    <header class="relative py-6 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col items-center text-center">
-                <div class="decorative-border relative">
-                    <h1 class="script-font text-5xl md:text-6xl lg:text-7xl font-bold gold-text mb-2">Oil of Joy Music</h1>
-                </div>
-                <div class="flex items-center space-x-4 mt-2">
-                    <div class="w-16 h-px gradient-gold"></div>
-                    <i class="fas fa-music musical-note gold-text text-xl"></i>
-                    <div class="w-16 h-px gradient-gold"></div>
-                </div>
-                <p class="elegant-font text-lg md:text-xl purple-text mt-3 font-medium">Your Special Event's Praise and Worship Band</p>
-            </div>
-        </div>
-    </header>
+<body class="text-gray-800">
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-white bg-opacity-95 backdrop-filter backdrop-blur-lg border-b border-opacity-20" style="border-color: var(--gold);">
-        <div class="max-w-6xl mx-auto px-4 py-3">
-            <div class="flex justify-center space-x-8">
-                <a href="#home" class="nav-link purple-text font-medium">Home</a>
-                <a href="#about" class="nav-link purple-text font-medium">About</a>
-                <a href="#services" class="nav-link purple-text font-medium">Services</a>
-                <a href="#booking" class="nav-link purple-text font-medium">Booking</a>
-                <a href="#contact" class="nav-link purple-text font-medium">Contact</a>
-            </div>
-        </div>
-    </nav>
+<!-- Header -->
+<header class="text-center py-10">
+  <h1 class="script-font text-5xl font-bold gold-text mb-3">Oil of Joy Music</h1>
+  <p class="elegant-font text-lg purple-text">Your Special Event's Praise and Worship Band</p>
+</header>
 
-    <!-- Hero Section -->
-    <section id="home" class="py-16 px-4">
-        <div class="max-w-6xl mx-auto text-center">
-            <div class="fade-in">
-                <h2 class="elegant-font text-4xl md:text-5xl lg:text-6xl font-bold purple-text mb-6">Bringing Sacred Music to Your Special Moments</h2>
-                <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-                    Experience the divine presence through professionally crafted worship music. Our dedicated ministry serves Calgary and surrounding areas, bringing the joy of praise and worship to your weddings, celebrations, and sacred gatherings.
-                </p>
-                <div class="flex justify-center space-x-4">
-                    <i class="fas fa-cross musical-note gold-text text-2xl"></i>
-                    <i class="fas fa-dove musical-note gold-text text-2xl" style="animation-delay: 0.5s;"></i>
-                    <i class="fas fa-heart musical-note gold-text text-2xl" style="animation-delay: 1s;"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 px-4">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h3 class="elegant-font text-3xl md:text-4xl font-bold purple-text mb-4">Our Ministry</h3>
-                <div class="w-24 h-1 gradient-gold mx-auto rounded-full"></div>
-            </div>
-            <div class="bg-white bg-opacity-80 rounded-2xl shadow-lg p-8 md:p-12">
-                <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                    Oil of Joy Music is more than a band – we are a ministry dedicated to creating sacred moments through music. Based in Calgary, we serve the surrounding areas with a heart for worship and a commitment to excellence.
-                </p>
-                <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                    Our experienced musicians and vocalists bring together diverse talents to create an atmosphere of reverence, joy, and spiritual connection. Whether you're planning an intimate home gathering or a grand celebration, we tailor our ministry to honor your special moment.
-                </p>
-                <div class="grid md:grid-cols-3 gap-6 mt-8">
-                    <div class="text-center">
-                        <i class="fas fa-map-marker-alt gold-text text-3xl mb-3"></i>
-                        <h4 class="font-semibold purple-text mb-2">Service Area</h4>
-                        <p class="text-gray-600">Calgary & Surrounding Areas</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-users gold-text text-3xl mb-3"></i>
-                        <h4 class="font-semibold purple-text mb-2">Experience</h4>
-                        <p class="text-gray-600">Professional Musicians & Vocalists</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-praying-hands gold-text text-3xl mb-3"></i>
-                        <h4 class="font-semibold purple-text mb-2">Ministry</h4>
-                        <p class="text-gray-600">Heart for Worship & Excellence</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section (UPDATED CONTENT + luxe borders/transitions) -->
-    <section id="services" class="py-16 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
-                <h3 class="elegant-font text-3xl md:text-4xl font-bold purple-text mb-4">Service Packages</h3>
-                <div class="w-24 h-1 gradient-gold mx-auto rounded-full mb-4"></div>
-                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-                    Choose from our carefully crafted packages, each designed to bring the perfect musical atmosphere to your event.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Shalom Package I -->
-                <div class="package-card hover-lift rounded-2xl p-6 shadow-lg">
-                    <div class="text-center mb-6">
-                        <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Shalom Package I</h4>
-                        <div class="text-3xl font-bold gold-text mb-2">$850</div>
-                        <p class="text-gray-600">1–2 hours • Residence Events</p>
-                    </div>
-                    <div class="soft-gold-divider mb-4"></div>
-                    <ul class="space-y-2 text-sm text-gray-700 mb-6">
-                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalist</li>
-                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
-                        <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Basic Sound System</li>
-                    </ul>
-                    <div class="text-center">
-                        <span class="inline-block px-3 py-1 bg-purple-100 purple-text rounded-full text-sm font-medium">Intimate Gatherings</span>
-                    </div>
-                </div>
-
-                <!-- Shalom Package II -->
-                <div class="package-card hover-lift rounded-2xl p-6 shadow-lg">
-                    <div class="text-center mb-6">
-                        <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Shalom Package II</h4>
-                        <div class="text-3xl font-bold gold-text mb-2">$1,300</div>
-                        <p class="text-gray-600">1–3 hours • Residence Events</p>
-                    </div>
-                    <div class="soft-gold-divider mb-4"></div>
-                    <ul class="space-y-2 text-sm text-gray-700 mb-6">
-                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalist</li>
-                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
-                        <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Basic Sound System</li>
-                        <li class="flex items-center"><i class="fas fa-saxophone-alt gold-text mr-2"></i>LIVE Saxophone <span class="mx-1">OR</span> Talking Drums</li>
-                        <li class="flex items-center"><i class="fas fa-broadcast-tower gold-text mr-2"></i>Enhanced Sound System</li>
-                    </ul>
-                    <div class="text-center">
-                        <span class="inline-block px-3 py-1 bg-purple-100 purple-text rounded-full text-sm font-medium">Extended Celebrations</span>
-                    </div>
-                </div>
-
-                <!-- Halleluyah Package I (spelling per brochure) -->
-                <div class="package-card hover-lift rounded-2xl p-6 shadow-lg">
-                    <div class="text-center mb-6">
-                        <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Halleluyah Package I</h4>
-                        <div class="text-3xl font-bold gold-text mb-2">$1,550</div>
-                        <p class="text-gray-600">1–2 hours • Halls/Centers Events</p>
-                    </div>
-                    <div class="soft-gold-divider mb-4"></div>
-                    <ul class="space-y-2 text-sm text-gray-700 mb-6">
-                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalists</li>
-                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
-                        <li class="flex items-center"><i class="fas fa-saxophone-alt gold-text mr-2"></i>LIVE Saxophone <span class="mx-1">OR</span> Talking Drums</li>
-                        <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Venue-Appropriate Sound</li>
-                    </ul>
-                </div>
-
-                <!-- Hallelujah Package II -->
-                <div class="package-card hover-lift rounded-2xl p-6 shadow-lg">
-                    <div class="text-center mb-6">
-                        <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Hallelujah Package II</h4>
-                        <div class="text-3xl font-bold gold-text mb-2">$1,850</div>
-                        <p class="text-gray-600">1–3 hours • Halls/Centers Events</p>
-                    </div>
-                    <div class="soft-gold-divider mb-4"></div>
-                    <ul class="space-y-2 text-sm text-gray-700 mb-6">
-                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalists</li>
-                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
-                        <li class="flex items-center"><i class="fas fa-saxophone-alt gold-text mr-2"></i>LIVE Saxophone <span class="mx-1">OR</span> Talking Drums</li>
-                        <li class="flex items-center"><i class="fas fa-drum gold-text mr-2"></i>LIVE Drum set</li>
-                        <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Venue-Appropriate Sound</li>
-                    </ul>
-                    <div class="text-center">
-                        <span class="inline-block px-3 py-1 bg-purple-100 purple-text rounded-full text-sm font-medium">Extended Hall Events</span>
-                    </div>
-                </div>
-
-                <!-- Rehoboth Package -->
-                <div class="package-card hover-lift rounded-2xl p-6 shadow-lg">
-                    <div class="text-center mb-6">
-                        <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Rehoboth Package</h4>
-                        <div class="text-3xl font-bold gold-text mb-2">$2,150</div>
-                        <p class="text-gray-600">1–3 hours • Large Venues</p>
-                    </div>
-                    <div class="soft-gold-divider mb-4"></div>
-                    <ul class="space-y-2 text-sm text-gray-700 mb-6">
-                        <li class="flex items-center"><i class="fas fa-star gold-text mr-2"></i>Full Professional Band</li>
-                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalists</li>
-                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
-                        <li class="flex items-center"><i class="fas fa-guitar gold-text mr-2"></i>Bass or Acoustic Guitar</li>
-                        <li class="flex items-center"><i class="fas fa-saxophone-alt gold-text mr-2"></i>LIVE Saxophone <span class="mx-1">OR</span> Talking Drums</li>
-                        <li class="flex items-center"><i class="fas fa-drum gold-text mr-2"></i>LIVE Drum set</li>
-                        <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Venue-Appropriate Sound</li>
-                    </ul>
-                    <div class="text-center">
-                        <span class="inline-block px-3 py-1 bg-yellow-50 text-yellow-800 rounded-full text-sm font-medium">Premium Large Celebrations</span>
-                    </div>
-                </div>
-
-                <!-- Goshen Package (Premium) -->
-                <div class="package-card hover-lift rounded-2xl p-6 shadow-lg">
-                    <div class="text-center mb-6">
-                        <div class="inline-block px-3 py-1 gradient-gold text-white rounded-full text-sm font-medium mb-2 badge-premium">PREMIUM</div>
-                        <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Goshen Package</h4>
-                        <div class="text-3xl font-bold gold-text mb-2">$2,500</div>
-                        <p class="text-gray-600">1–4 hours • Large Venues</p>
-                    </div>
-                    <div class="soft-gold-divider mb-4"></div>
-                    <ul class="space-y-2 text-sm text-gray-700 mb-6">
-                        <li class="flex items-center"><i class="fas fa-star gold-text mr-2"></i>Full Professional Band</li>
-                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Lead & Harmony Vocals</li>
-                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
-                        <li class="flex items-center"><i class="fas fa-guitar gold-text mr-2"></i>Bass or Acoustic Guitar</li>
-                        <li class="flex items-center"><i class="fas fa-saxophone-alt gold-text mr-2"></i>LIVE Saxophone <span class="mx-1">OR</span> Talking Drums</li>
-                        <li class="flex items-center"><i class="fas fa-drum gold-text mr-2"></i>LIVE Drum set</li>
-                        <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Venue-Appropriate Sound</li>
-                    </ul>
-                    <div class="text-center">
-                        <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Ultimate Experience</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Terms (updated to match brochure) -->
-            <div class="mt-12 bg-gray-50 rounded-2xl p-8">
-                <h4 class="font-semibold purple-text mb-4 text-center">Important Terms & Conditions</h4>
-                <div class="grid md:grid-cols-4 gap-6 text-sm text-gray-700">
-                    <div class="text-center">
-                        <i class="fas fa-hourglass-start gold-text text-2xl mb-2"></i>
-                        <p><strong>Minimum Time:</strong> Minimum of 1 hour</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-map-marked-alt gold-text text-2xl mb-2"></i>
-                        <p><strong>Travel:</strong> Terms apply outside Calgary</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-clock gold-text text-2xl mb-2"></i>
-                        <p><strong>Extra Hours:</strong> Rates increase with additional hours</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-credit-card gold-text text-2xl mb-2"></i>
-                        <p><strong>Deposit:</strong> 70% required to secure your reservation</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Booking Form Section -->
-    <section id="booking" class="py-16 px-4">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h3 class="elegant-font text-3xl md:text-4xl font-bold purple-text mb-4">Request Your Booking</h3>
-                <div class="w-24 h-1 gradient-gold mx-auto rounded-full mb-4"></div>
-                <p class="text-lg text-gray-700">Let us be part of your special moment. Fill out the form below and we'll get back to you within 24 hours.</p>
-            </div>
-
-            <div class="bg-white bg-opacity-90 rounded-2xl shadow-xl p-8 md:p-12">
-                <form id="booking-form" action="https://formsubmit.co/ajax/oilofjoymusic@gmail.com" method="POST" class="space-y-6">
-                    <input type="hidden" name="_captcha" value="false" />
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium purple-text mb-2">Full Name *</label>
-                            <input type="text" name="full_name" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Your full name" />
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium purple-text mb-2">Email Address *</label>
-                            <input type="email" name="email" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="your@email.com" />
-                        </div>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium purple-text mb-2">Phone Number *</label>
-                            <input type="tel" name="phone" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="(403) 000-0000" />
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium purple-text mb-2">Event Date *</label>
-                            <input type="date" name="event_date" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" />
-                        </div>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium purple-text mb-2">Event Start Time *</label>
-                            <input type="time" name="event_start_time" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" />
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium purple-text mb-2">Expected Duration</label>
-                            <select name="duration" class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
-                                <option>1 hour</option>
-                                <option>1.5 hours</option>
-                                <option>2 hours</option>
-                                <option>2.5 hours</option>
-                                <option>3 hours</option>
-                                <option>3.5 hours</option>
-                                <option>4 hours</option>
-                                <option>More than 4 hours</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium purple-text mb-2">Venue Type *</label>
-                            <select name="venue_type" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
-                                <option value="">Select venue type</option>
-                                <option>Private Residence</option>
-                                <option>Community Hall</option>
-                                <option>Event Center</option>
-                                <option>Church/Religious Venue</option>
-                                <option>Outdoor Venue</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium purple-text mb-2">Preferred Package</label>
-                            <select name="preferred_package" class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
-                                <option value="">Select a package</option>
-                                <option>Shalom Package I ($850)</option>
-                                <option>Shalom Package II ($1,300)</option>
-                                <option>Halleluyah Package I ($1,550)</option>
-                                <option>Hallelujah Package II ($1,850)</option>
-                                <option>Rehoboth Package ($2,150)</option>
-                                <option>Goshen Package ($2,500)</option>
-                                <option>Custom Quote Needed</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium purple-text mb-2">Venue Location *</label>
-                        <input type="text" name="venue_location" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Full address or general area (e.g., Calgary NW, Airdrie, etc.)" />
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium purple-text mb-2">Event Details & Special Requests</label>
-                        <textarea name="event_details" rows="4" class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Tell us about your event, any special songs you'd like, accessibility requirements, or other details that would help us serve you better..."></textarea>
-                    </div>
-
-                    <div class="text-center pt-6">
-                        <button type="submit" class="btn-primary text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-yellow-300">
-                            <i class="fas fa-paper-plane mr-2"></i>
-                            Request Booking
-                        </button>
-                        <p class="text-sm text-gray-600 mt-4">We'll respond within 24 hours during business hours</p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Footer -->
-    <footer id="contact" class="gradient-purple text-white py-16 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h3 class="elegant-font text-3xl md:text-4xl font-bold mb-4">Get in Touch</h3>
-                <div class="w-24 h-1 bg-white bg-opacity-50 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div>
-                    <div class="bg-white bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"><i class="fas fa-phone text-2xl"></i></div>
-                    <h4 class="font-semibold text-xl mb-2">Phone</h4>
-                    <a href="tel:4037026102" class="text-lg hover:text-yellow-300 transition-colors">(403) 702-6102</a>
-                </div>
-                <div>
-                    <div class="bg-white bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"><i class="fas fa-envelope text-2xl"></i></div>
-                    <h4 class="font-semibold text-xl mb-2">Email</h4>
-                    <a href="mailto:oilofjoymusic@gmail.com" class="text-lg hover:text-yellow-300 transition-colors">oilofjoymusic@gmail.com</a>
-                </div>
-                <div>
-                    <div class="bg-white bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"><i class="fas fa-clock text-2xl"></i></div>
-                    <h4 class="font-semibold text-xl mb-2">Contact Hours</h4>
-                    <p class="text-lg">Weekdays<br />4:30 PM - 8:00 PM</p>
-                </div>
-            </div>
-
-            <div class="border-t border-white border-opacity-20 mt-12 pt-8 text-center">
-                <div class="flex justify-center space-x-6 mb-6">
-                    <i class="fas fa-cross text-2xl opacity-75"></i>
-                    <i class="fas fa-music text-2xl opacity-75"></i>
-                    <i class="fas fa-heart text-2xl opacity-75"></i>
-                </div>
-                <p class="text-lg opacity-90 mb-2"><span class="script-font text-2xl">Oil of Joy Music</span></p>
-                <p class="opacity-75">Serving Calgary and surrounding areas with excellence in Christian worship music</p>
-                <div class="mt-6 text-sm opacity-60">
-                    <p>&copy; 2024 Oil of Joy Music. All rights reserved. | A ministry dedicated to worship through music.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Thank You Modal -->
-    <div id="thankyouModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 opacity-0 transition-opacity duration-500">
-        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md text-center border-2 transform scale-95 transition-all duration-500" style="border-color: var(--gold);">
-            <h3 class="elegant-font text-2xl font-bold purple-text mb-4">Thank You!</h3>
-            <p class="text-gray-700 mb-6">Your booking request has been received.<br />We’ll contact you within 24 hours.</p>
-            <button onclick="closeModal()" class="btn-primary text-white px-6 py-2 rounded-full shadow-md">Close</button>
-        </div>
+<!-- Services Section -->
+<section id="services" class="py-16 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h3 class="elegant-font text-3xl md:text-4xl font-bold purple-text mb-4">Service Packages</h3>
+      <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto rounded-full mb-4"></div>
+      <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+        Choose from our carefully crafted packages, each designed to bring the perfect musical atmosphere to your event.
+      </p>
     </div>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        // Form submission via FormSubmit (AJAX) + modal
-        const bookingForm = document.getElementById('booking-form');
-        if (bookingForm) {
-            bookingForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                const requiredFields = bookingForm.querySelectorAll('[required]');
-                let isValid = true;
-                requiredFields.forEach(field => {
-                    if (!field.value.trim()) {
-                        isValid = false; field.style.borderColor = '#ef4444';
-                    } else { field.style.borderColor = '#d1d5db'; }
-                });
-                if (!isValid) { alert('Please fill in all required fields.'); return; }
-                try {
-                    const response = await fetch(bookingForm.action, { method: bookingForm.method, body: new FormData(bookingForm), headers: { 'Accept': 'application/json' } });
-                    if (response.ok) { bookingForm.reset(); showModal(); }
-                    else { alert('Oops! Something went wrong. Please try again.'); }
-                } catch (error) { alert('Error submitting form. Please try again.'); }
-            });
-        }
+      <!-- Shalom Package I -->
+      <div class="package-card rounded-2xl p-6 shadow-lg hover-lift">
+        <div class="text-center mb-6">
+          <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Shalom Package I</h4>
+          <div class="text-3xl font-bold gold-text mb-2">$850</div>
+          <p class="text-gray-600">1–2 hours • Residence Events</p>
+        </div>
+        <div class="soft-gold-divider mb-4"></div>
+        <ul class="space-y-2 text-sm text-gray-700 mb-6">
+          <li><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalist</li>
+          <li><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
+          <li><i class="fas fa-volume-up gold-text mr-2"></i>Basic Sound System</li>
+          <li><i class="fas fa-home gold-text mr-2"></i>Intimate Gatherings</li>
+        </ul>
+      </div>
 
-        // Fade-in on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        document.querySelectorAll('section').forEach(section => observer.observe(section));
+      <!-- Shalom Package II -->
+      <div class="package-card rounded-2xl p-6 shadow-lg hover-lift">
+        <div class="text-center mb-6">
+          <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Shalom Package II</h4>
+          <div class="text-3xl font-bold gold-text mb-2">$1,300</div>
+          <p class="text-gray-600">1–3 hours • Residence Events</p>
+        </div>
+        <div class="soft-gold-divider mb-4"></div>
+        <ul class="space-y-2 text-sm text-gray-700 mb-6">
+          <li><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalist</li>
+          <li><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
+          <li><i class="fas fa-volume-up gold-text mr-2"></i>Basic Sound System</li>
+          <li><i class="fas fa-saxophone gold-text mr-2"></i>LIVE Saxophone or Talking Drums</li>
+          <li><i class="fas fa-bullhorn gold-text mr-2"></i>Enhanced Sound System</li>
+          <li><i class="fas fa-clock gold-text mr-2"></i>Extended Celebrations</li>
+        </ul>
+      </div>
 
-        // Musical notes stagger
-        document.querySelectorAll('.musical-note').forEach((note, index) => { note.style.animationDelay = `${index * 0.5}s`; });
+      <!-- Halleluyah Package I -->
+      <div class="package-card rounded-2xl p-6 shadow-lg hover-lift">
+        <div class="text-center mb-6">
+          <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Halleluyah Package I</h4>
+          <div class="text-3xl font-bold gold-text mb-2">$1,550</div>
+          <p class="text-gray-600">1–2 hours • Halls/Centers Events</p>
+        </div>
+        <div class="soft-gold-divider mb-4"></div>
+        <ul class="space-y-2 text-sm text-gray-700 mb-6">
+          <li><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalists</li>
+          <li><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
+          <li><i class="fas fa-saxophone gold-text mr-2"></i>LIVE Saxophone or Talking Drums</li>
+          <li><i class="fas fa-volume-up gold-text mr-2"></i>Venue-Appropriate Sound</li>
+        </ul>
+      </div>
 
-        // Modal helpers
-        function showModal() {
-            const modal = document.getElementById('thankyouModal');
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                modal.querySelector('div').classList.remove('scale-95');
-                modal.querySelector('div').classList.add('scale-100');
-            }, 10);
-            setTimeout(() => { closeModal(); }, 5000);
-        }
-        function closeModal() {
-            const modal = document.getElementById('thankyouModal');
-            modal.classList.add('opacity-0');
-            modal.querySelector('div').classList.remove('scale-100');
-            modal.querySelector('div').classList.add('scale-95');
-            setTimeout(() => { modal.classList.add('hidden'); }, 500);
-        }
-    </script>
+      <!-- Hallelujah Package II -->
+      <div class="package-card rounded-2xl p-6 shadow-lg hover-lift">
+        <div class="text-center mb-6">
+          <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Hallelujah Package II</h4>
+          <div class="text-3xl font-bold gold-text mb-2">$1,850</div>
+          <p class="text-gray-600">1–3 hours • Halls/Centers Events</p>
+        </div>
+        <div class="soft-gold-divider mb-4"></div>
+        <ul class="space-y-2 text-sm text-gray-700 mb-6">
+          <li><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalists</li>
+          <li><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
+          <li><i class="fas fa-saxophone gold-text mr-2"></i>LIVE Saxophone or Talking Drums</li>
+          <li><i class="fas fa-drum gold-text mr-2"></i>LIVE Drum set</li>
+          <li><i class="fas fa-volume-up gold-text mr-2"></i>Venue-Appropriate Sound</li>
+          <li><i class="fas fa-clock gold-text mr-2"></i>Extended Hall Events</li>
+        </ul>
+      </div>
+
+      <!-- Rehoboth Package -->
+      <div class="package-card rounded-2xl p-6 shadow-lg hover-lift">
+        <div class="text-center mb-6">
+          <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Rehoboth Package</h4>
+          <div class="text-3xl font-bold gold-text mb-2">$2,150</div>
+          <p class="text-gray-600">1–3 hours • Large Venues</p>
+        </div>
+        <div class="soft-gold-divider mb-4"></div>
+        <ul class="space-y-2 text-sm text-gray-700 mb-6">
+          <li><i class="fas fa-star gold-text mr-2"></i>Full Professional Band</li>
+          <li><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalists</li>
+          <li><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
+          <li><i class="fas fa-guitar gold-text mr-2"></i>Bass or Acoustic Guitar</li>
+          <li><i class="fas fa-saxophone gold-text mr-2"></i>LIVE Saxophone or Talking Drums</li>
+          <li><i class="fas fa-drum gold-text mr-2"></i>LIVE Drum set</li>
+          <li><i class="fas fa-volume-up gold-text mr-2"></i>Venue-Appropriate Sound</li>
+        </ul>
+      </div>
+
+      <!-- Goshen Package -->
+      <div class="package-card rounded-2xl p-6 shadow-lg hover-lift">
+        <div class="text-center mb-6">
+          <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Goshen Package</h4>
+          <div class="text-3xl font-bold gold-text mb-2">$2,500</div>
+          <p class="text-gray-600">1–4 hours • Large Venues</p>
+        </div>
+        <div class="soft-gold-divider mb-4"></div>
+        <ul class="space-y-2 text-sm text-gray-700 mb-6">
+          <li><i class="fas fa-star gold-text mr-2"></i>Full Professional Band</li>
+          <li><i class="fas fa-microphone gold-text mr-2"></i>Lead & Harmony Vocals</li>
+          <li><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
+          <li><i class="fas fa-guitar gold-text mr-2"></i>Bass or Acoustic Guitar</li>
+          <li><i class="fas fa-saxophone gold-text mr-2"></i>LIVE Saxophone or Talking Drums</li>
+          <li><i class="fas fa-drum gold-text mr-2"></i>LIVE Drum set</li>
+          <li><i class="fas fa-volume-up gold-text mr-2"></i>Venue-Appropriate Sound</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Terms -->
+    <div class="text-center mt-10 text-gray-700 text-sm">
+      <p>*Minimum of 1 Hour • Travel terms apply for events outside Calgary</p>
+      <p>*Rates increase with additional hours • 70% deposit required to secure your reservation</p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="text-center py-10 border-t border-gray-300">
+  <p class="text-gray-600">&copy; 2025 Oil of Joy Music. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
