@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oil of Joy Music - Calgary's Premier Christian Praise & Worship Band</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <style>
         :root {
             --gold: #D4AF37;
@@ -16,24 +16,16 @@
             --cream: #FFF8DC;
             --warm-white: #FFFEF7;
         }
-        
+
         body {
             background: linear-gradient(135deg, var(--cream) 0%, var(--warm-white) 100%);
             font-family: 'Inter', sans-serif;
         }
-        
-        .script-font {
-            font-family: 'Dancing Script', cursive;
-        }
-        
-        .elegant-font {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .decorative-border {
-            position: relative;
-        }
-        
+
+        .script-font { font-family: 'Dancing Script', cursive; }
+        .elegant-font { font-family: 'Playfair Display', serif; }
+
+        .decorative-border { position: relative; }
         .decorative-border::before,
         .decorative-border::after {
             content: '❦';
@@ -43,293 +35,102 @@
             top: 50%;
             transform: translateY(-50%);
         }
-        
-        .decorative-border::before {
-            left: -3rem;
-        }
-        
-        .decorative-border::after {
-            right: -3rem;
-        }
-        
-        /* Mobile-specific decorative border adjustments */
+        .decorative-border::before { left: -3rem; }
+        .decorative-border::after { right: -3rem; }
+
         @media (max-width: 640px) {
-            .decorative-border::before {
-                left: -2rem;
-                font-size: 1rem;
-            }
-            
-            .decorative-border::after {
-                right: -2rem;
-                font-size: 1rem;
-            }
+            .decorative-border::before { left: -2rem; font-size: 1rem; }
+            .decorative-border::after { right: -2rem; font-size: 1rem; }
         }
-        
         @media (max-width: 480px) {
-            .decorative-border::before,
-            .decorative-border::after {
-                display: none;
-            }
+            .decorative-border::before, .decorative-border::after { display: none; }
         }
-        
-        .gradient-gold {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--bronze) 100%);
-        }
-        
-        .gradient-purple {
-            background: linear-gradient(135deg, var(--deep-purple) 0%, var(--burgundy) 100%);
-        }
-        
-        .hover-lift {
-            transition: all 0.3s ease;
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(107, 30, 75, 0.2);
-        }
-        
-        /* Mobile touch-friendly hover effects */
+
+        .gradient-gold { background: linear-gradient(135deg, var(--gold) 0%, var(--bronze) 100%); }
+        .gradient-purple { background: linear-gradient(135deg, var(--deep-purple) 0%, var(--burgundy) 100%); }
+
+        .hover-lift { transition: all 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(107, 30, 75, 0.2); }
         @media (hover: none) and (pointer: coarse) {
-            .hover-lift:hover {
-                transform: none;
-            }
-            
-            .hover-lift:active {
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(107, 30, 75, 0.2);
-            }
+            .hover-lift:hover { transform: none; }
+            .hover-lift:active { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(107, 30, 75, 0.2); }
         }
-        
-        .musical-note {
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .gold-text {
-            color: var(--gold);
-        }
-        
-        .purple-text {
-            color: var(--deep-purple);
-        }
-        
-        .burgundy-text {
-            color: var(--burgundy);
-        }
-        
-        .nav-link {
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-        }
-        
-        .nav-link:hover {
-            color: var(--gold) !important;
-            transform: scale(1.05);
-        }
-        
-        /* Mobile-friendly navigation */
+
+        .musical-note { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+
+        .fade-in { opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s ease forwards; }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+        .gold-text { color: var(--gold); }
+        .purple-text { color: var(--deep-purple); }
+        .burgundy-text { color: var(--burgundy); }
+
+        .nav-link { transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 0.5rem; }
+        .nav-link:hover { color: var(--gold) !important; transform: scale(1.05); }
         @media (max-width: 768px) {
-            .nav-link {
-                padding: 0.75rem 1rem;
-                margin: 0.25rem;
-                display: block;
-                text-align: center;
-            }
-            
-            .nav-link:hover {
-                transform: none;
-                background-color: rgba(212, 175, 55, 0.1);
-            }
+            .nav-link { padding: 0.75rem 1rem; margin: 0.25rem; display: block; text-align: center; }
+            .nav-link:hover { transform: none; background-color: rgba(212, 175, 55, 0.1); }
         }
-        
-        .form-input {
-            border: 2px solid transparent;
-            background: rgba(255, 255, 255, 0.9);
-            transition: all 0.3s ease;
-            min-height: 44px; /* Touch-friendly minimum height */
-        }
-        
-        .form-input:focus {
-            border-color: var(--gold);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
-        }
-        
-        /* Mobile-specific form improvements */
+
+        .form-input { border: 2px solid transparent; background: rgba(255, 255, 255, 0.9); transition: all 0.3s ease; min-height: 44px; }
+        .form-input:focus { border-color: var(--gold); background: white; box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1); }
+        @media (max-width: 768px) { .form-input { font-size: 16px; min-height: 48px; } }
+
+        .btn-primary { background: linear-gradient(135deg, var(--gold) 0%, var(--bronze) 100%); transition: all 0.3s ease; min-height: 44px; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4); }
         @media (max-width: 768px) {
-            .form-input {
-                font-size: 16px; /* Prevents zoom on iOS */
-                min-height: 48px;
-            }
+            .btn-primary { min-height: 48px; font-size: 1rem; padding: 1rem 2rem; }
+            .btn-primary:hover { transform: none; }
+            .btn-primary:active { transform: translateY(1px); }
         }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--bronze) 100%);
-            transition: all 0.3s ease;
-            min-height: 44px;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-        }
-        
-        /* Mobile-friendly button */
-        @media (max-width: 768px) {
-            .btn-primary {
-                min-height: 48px;
-                font-size: 1rem;
-                padding: 1rem 2rem;
-            }
-            
-            .btn-primary:hover {
-                transform: none;
-            }
-            
-            .btn-primary:active {
-                transform: translateY(1px);
-            }
-        }
-        
+
+        /* ===== Luxe tweaks just for the Plans section ===== */
         .package-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
         }
-        
         .package-card:hover {
             border-color: var(--gold);
-            background: white;
+            box-shadow: 0 14px 40px rgba(107, 30, 75, 0.18), inset 0 0 0 1px rgba(212, 175, 55, 0.35);
+            transform: translateY(-6px);
         }
-        
-        /* Mobile-specific package card adjustments */
+        .soft-gold-divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(212,175,55,0), rgba(212,175,55,0.55), rgba(212,175,55,0));
+        }
+        .badge-premium { letter-spacing: .02em; }
+
         @media (max-width: 768px) {
-            .package-card {
-                margin-bottom: 1rem;
-            }
-            
-            .package-card:hover {
-                border-color: rgba(212, 175, 55, 0.2);
-                background: rgba(255, 255, 255, 0.95);
-            }
-            
-            .package-card:active {
-                border-color: var(--gold);
-                background: white;
-            }
+            .package-card { margin-bottom: 1rem; }
+            .package-card:hover { border-color: rgba(212, 175, 55, 0.25); box-shadow: none; transform: none; }
+            .package-card:active { border-color: var(--gold); }
         }
-        
-        /* Mobile navigation improvements */
+
+        @media (max-width: 640px) { nav .flex { flex-wrap: wrap; justify-content: center; } nav .space-x-8 > * + * { margin-left: 0.5rem; } }
+
         @media (max-width: 640px) {
-            nav .flex {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            nav .space-x-8 > * + * {
-                margin-left: 0.5rem;
-            }
+            .script-font { font-size: 2.5rem !important; line-height: 1.2; }
+            .elegant-font.text-4xl, .elegant-font.text-5xl, .elegant-font.text-6xl { font-size: 2rem !important; line-height: 1.3; }
+            h3.elegant-font { font-size: 1.75rem !important; }
         }
-        
-        /* Mobile typography adjustments */
-        @media (max-width: 640px) {
-            .script-font {
-                font-size: 2.5rem !important;
-                line-height: 1.2;
-            }
-            
-            .elegant-font.text-4xl,
-            .elegant-font.text-5xl,
-            .elegant-font.text-6xl {
-                font-size: 2rem !important;
-                line-height: 1.3;
-            }
-            
-            h3.elegant-font {
-                font-size: 1.75rem !important;
-            }
-        }
-        
-        /* Mobile spacing improvements */
+
         @media (max-width: 768px) {
-            .py-16 {
-                padding-top: 3rem;
-                padding-bottom: 3rem;
-            }
-            
-            .px-4 {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            
-            .mb-12 {
-                margin-bottom: 2rem;
-            }
-            
-            .space-y-6 > * + * {
-                margin-top: 1rem;
-            }
+            .py-16 { padding-top: 3rem; padding-bottom: 3rem; }
+            .px-4 { padding-left: 1rem; padding-right: 1rem; }
+            .mb-12 { margin-bottom: 2rem; }
+            .space-y-6 > * + * { margin-top: 1rem; }
         }
-        
-        /* Touch-friendly contact links */
-        @media (max-width: 768px) {
-            footer a {
-                display: inline-block;
-                padding: 0.5rem;
-                margin: 0.25rem;
-                border-radius: 0.5rem;
-                transition: background-color 0.3s ease;
-            }
-            
-            footer a:hover {
-                background-color: rgba(255, 255, 255, 0.1);
-            }
-        }
-        
-        /* Ensure text remains readable on mobile */
+
         @media (max-width: 480px) {
-            .text-lg {
-                font-size: 1rem;
-                line-height: 1.5;
-            }
-            
-            .text-xl {
-                font-size: 1.125rem;
-                line-height: 1.5;
-            }
-            
-            .text-2xl {
-                font-size: 1.375rem;
-                line-height: 1.4;
-            }
+            .text-lg { font-size: 1rem; line-height: 1.5; }
+            .text-xl { font-size: 1.125rem; line-height: 1.5; }
+            .text-2xl { font-size: 1.375rem; line-height: 1.4; }
         }
-        
-        @media print {
-            * {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-            }
-        }
+
+        @media print { * { -webkit-print-color-adjust: exact !important; color-adjust: exact !important; } }
     </style>
 </head>
 <body>
@@ -338,18 +139,14 @@
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col items-center text-center">
                 <div class="decorative-border relative">
-                    <h1 class="script-font text-5xl md:text-6xl lg:text-7xl font-bold gold-text mb-2">
-                        Oil of Joy Music
-                    </h1>
+                    <h1 class="script-font text-5xl md:text-6xl lg:text-7xl font-bold gold-text mb-2">Oil of Joy Music</h1>
                 </div>
                 <div class="flex items-center space-x-4 mt-2">
                     <div class="w-16 h-px gradient-gold"></div>
                     <i class="fas fa-music musical-note gold-text text-xl"></i>
                     <div class="w-16 h-px gradient-gold"></div>
                 </div>
-                <p class="elegant-font text-lg md:text-xl purple-text mt-3 font-medium">
-                    Your Special Event's Praise and Worship Band
-                </p>
+                <p class="elegant-font text-lg md:text-xl purple-text mt-3 font-medium">Your Special Event's Praise and Worship Band</p>
             </div>
         </div>
     </header>
@@ -371,9 +168,7 @@
     <section id="home" class="py-16 px-4">
         <div class="max-w-6xl mx-auto text-center">
             <div class="fade-in">
-                <h2 class="elegant-font text-4xl md:text-5xl lg:text-6xl font-bold purple-text mb-6">
-                    Bringing Sacred Music to Your Special Moments
-                </h2>
+                <h2 class="elegant-font text-4xl md:text-5xl lg:text-6xl font-bold purple-text mb-6">Bringing Sacred Music to Your Special Moments</h2>
                 <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
                     Experience the divine presence through professionally crafted worship music. Our dedicated ministry serves Calgary and surrounding areas, bringing the joy of praise and worship to your weddings, celebrations, and sacred gatherings.
                 </p>
@@ -421,7 +216,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section (UPDATED CONTENT + luxe borders/transitions) -->
     <section id="services" class="py-16 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
@@ -431,19 +226,19 @@
                     Choose from our carefully crafted packages, each designed to bring the perfect musical atmosphere to your event.
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Shalom Package -->
+                <!-- Shalom Package I -->
                 <div class="package-card hover-lift rounded-2xl p-6 shadow-lg">
                     <div class="text-center mb-6">
-                        <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Shalom Package</h4>
-                        <div class="text-3xl font-bold gold-text mb-2">$650</div>
-                        <p class="text-gray-600">1-2 hours • Residence Events</p>
+                        <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Shalom Package I</h4>
+                        <div class="text-3xl font-bold gold-text mb-2">$850</div>
+                        <p class="text-gray-600">1–2 hours • Residence Events</p>
                     </div>
+                    <div class="soft-gold-divider mb-4"></div>
                     <ul class="space-y-2 text-sm text-gray-700 mb-6">
-                        <li class="flex items-center"><i class="fas fa-music gold-text mr-2"></i>Acoustic Guitar</li>
-                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Lead Vocalist</li>
-                        <li class="flex items-center"><i class="fas fa-drum gold-text mr-2"></i>Percussion</li>
+                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalist</li>
+                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
                         <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Basic Sound System</li>
                     </ul>
                     <div class="text-center">
@@ -451,58 +246,56 @@
                     </div>
                 </div>
 
-                <!-- Hallelujah Package -->
+                <!-- Shalom Package II -->
                 <div class="package-card hover-lift rounded-2xl p-6 shadow-lg">
                     <div class="text-center mb-6">
-                        <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Hallelujah Package</h4>
-                        <div class="text-3xl font-bold gold-text mb-2">$1,000</div>
-                        <p class="text-gray-600">1-3 hours • Residence Events</p>
+                        <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Shalom Package II</h4>
+                        <div class="text-3xl font-bold gold-text mb-2">$1,300</div>
+                        <p class="text-gray-600">1–3 hours • Residence Events</p>
                     </div>
+                    <div class="soft-gold-divider mb-4"></div>
                     <ul class="space-y-2 text-sm text-gray-700 mb-6">
-                        <li class="flex items-center"><i class="fas fa-music gold-text mr-2"></i>Acoustic & Electric Guitar</li>
-                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Lead & Backing Vocals</li>
-                        <li class="flex items-center"><i class="fas fa-drum gold-text mr-2"></i>Full Drum Kit</li>
-                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keyboard/Piano</li>
-                        <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Enhanced Sound System</li>
+                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalist</li>
+                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
+                        <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Basic Sound System</li>
+                        <li class="flex items-center"><i class="fas fa-saxophone-alt gold-text mr-2"></i>LIVE Saxophone <span class="mx-1">OR</span> Talking Drums</li>
+                        <li class="flex items-center"><i class="fas fa-broadcast-tower gold-text mr-2"></i>Enhanced Sound System</li>
                     </ul>
                     <div class="text-center">
                         <span class="inline-block px-3 py-1 bg-purple-100 purple-text rounded-full text-sm font-medium">Extended Celebrations</span>
                     </div>
                 </div>
 
-                <!-- Shalom II Package -->
+                <!-- Halleluyah Package I (spelling per brochure) -->
                 <div class="package-card hover-lift rounded-2xl p-6 shadow-lg">
                     <div class="text-center mb-6">
-                        <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Shalom II Package</h4>
-                        <div class="text-3xl font-bold gold-text mb-2">$1,250</div>
-                        <p class="text-gray-600">1-2 hours • Halls/Centers</p>
+                        <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Halleluyah Package I</h4>
+                        <div class="text-3xl font-bold gold-text mb-2">$1,550</div>
+                        <p class="text-gray-600">1–2 hours • Halls/Centers Events</p>
                     </div>
+                    <div class="soft-gold-divider mb-4"></div>
                     <ul class="space-y-2 text-sm text-gray-700 mb-6">
-                        <li class="flex items-center"><i class="fas fa-music gold-text mr-2"></i>Multiple Guitars</li>
-                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Professional Vocalists</li>
-                        <li class="flex items-center"><i class="fas fa-drum gold-text mr-2"></i>Complete Rhythm Section</li>
-                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keyboard/Piano</li>
+                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalists</li>
+                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
+                        <li class="flex items-center"><i class="fas fa-saxophone-alt gold-text mr-2"></i>LIVE Saxophone <span class="mx-1">OR</span> Talking Drums</li>
                         <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Venue-Appropriate Sound</li>
                     </ul>
-                    <div class="text-center">
-                        <span class="inline-block px-3 py-1 bg-purple-100 purple-text rounded-full text-sm font-medium">Hall Events</span>
-                    </div>
                 </div>
 
-                <!-- Hallelujah II Package -->
+                <!-- Hallelujah Package II -->
                 <div class="package-card hover-lift rounded-2xl p-6 shadow-lg">
                     <div class="text-center mb-6">
-                        <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Hallelujah II Package</h4>
-                        <div class="text-3xl font-bold gold-text mb-2">$1,350</div>
-                        <p class="text-gray-600">1-3 hours • Halls/Centers</p>
+                        <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Hallelujah Package II</h4>
+                        <div class="text-3xl font-bold gold-text mb-2">$1,850</div>
+                        <p class="text-gray-600">1–3 hours • Halls/Centers Events</p>
                     </div>
+                    <div class="soft-gold-divider mb-4"></div>
                     <ul class="space-y-2 text-sm text-gray-700 mb-6">
-                        <li class="flex items-center"><i class="fas fa-music gold-text mr-2"></i>Full Guitar Section</li>
-                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Worship Team Vocals</li>
-                        <li class="flex items-center"><i class="fas fa-drum gold-text mr-2"></i>Professional Drums</li>
-                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keys & Piano</li>
-                        <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Professional Sound System</li>
-                        <li class="flex items-center"><i class="fas fa-lightbulb gold-text mr-2"></i>Basic Lighting</li>
+                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalists</li>
+                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
+                        <li class="flex items-center"><i class="fas fa-saxophone-alt gold-text mr-2"></i>LIVE Saxophone <span class="mx-1">OR</span> Talking Drums</li>
+                        <li class="flex items-center"><i class="fas fa-drum gold-text mr-2"></i>LIVE Drum set</li>
+                        <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Venue-Appropriate Sound</li>
                     </ul>
                     <div class="text-center">
                         <span class="inline-block px-3 py-1 bg-purple-100 purple-text rounded-full text-sm font-medium">Extended Hall Events</span>
@@ -513,40 +306,41 @@
                 <div class="package-card hover-lift rounded-2xl p-6 shadow-lg">
                     <div class="text-center mb-6">
                         <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Rehoboth Package</h4>
-                        <div class="text-3xl font-bold gold-text mb-2">$1,500</div>
-                        <p class="text-gray-600">1-4 hours • Larger Venues</p>
+                        <div class="text-3xl font-bold gold-text mb-2">$2,150</div>
+                        <p class="text-gray-600">1–3 hours • Large Venues</p>
                     </div>
+                    <div class="soft-gold-divider mb-4"></div>
                     <ul class="space-y-2 text-sm text-gray-700 mb-6">
-                        <li class="flex items-center"><i class="fas fa-music gold-text mr-2"></i>Complete Band Setup</li>
-                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Full Vocal Team</li>
-                        <li class="flex items-center"><i class="fas fa-drum gold-text mr-2"></i>Professional Percussion</li>
-                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Piano & Synthesizer</li>
-                        <li class="flex items-center"><i class="fas fa-guitar gold-text mr-2"></i>Bass Guitar</li>
-                        <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Advanced Sound System</li>
-                        <li class="flex items-center"><i class="fas fa-lightbulb gold-text mr-2"></i>Stage Lighting</li>
+                        <li class="flex items-center"><i class="fas fa-star gold-text mr-2"></i>Full Professional Band</li>
+                        <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Lead and backup vocalists</li>
+                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
+                        <li class="flex items-center"><i class="fas fa-guitar gold-text mr-2"></i>Bass or Acoustic Guitar</li>
+                        <li class="flex items-center"><i class="fas fa-saxophone-alt gold-text mr-2"></i>LIVE Saxophone <span class="mx-1">OR</span> Talking Drums</li>
+                        <li class="flex items-center"><i class="fas fa-drum gold-text mr-2"></i>LIVE Drum set</li>
+                        <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Venue-Appropriate Sound</li>
                     </ul>
                     <div class="text-center">
-                        <span class="inline-block px-3 py-1 bg-purple-100 purple-text rounded-full text-sm font-medium">Large Celebrations</span>
+                        <span class="inline-block px-3 py-1 bg-yellow-50 text-yellow-800 rounded-full text-sm font-medium">Premium Large Celebrations</span>
                     </div>
                 </div>
 
-                <!-- Goshen Package -->
-                <div class="package-card hover-lift rounded-2xl p-6 shadow-lg border-2 border-gold-400">
+                <!-- Goshen Package (Premium) -->
+                <div class="package-card hover-lift rounded-2xl p-6 shadow-lg">
                     <div class="text-center mb-6">
-                        <div class="inline-block px-3 py-1 gradient-gold text-white rounded-full text-sm font-medium mb-2">PREMIUM</div>
+                        <div class="inline-block px-3 py-1 gradient-gold text-white rounded-full text-sm font-medium mb-2 badge-premium">PREMIUM</div>
                         <h4 class="elegant-font text-2xl font-bold purple-text mb-2">Goshen Package</h4>
-                        <div class="text-3xl font-bold gold-text mb-2">$1,850</div>
-                        <p class="text-gray-600">1-4 hours • Premium Package</p>
+                        <div class="text-3xl font-bold gold-text mb-2">$2,500</div>
+                        <p class="text-gray-600">1–4 hours • Large Venues</p>
                     </div>
+                    <div class="soft-gold-divider mb-4"></div>
                     <ul class="space-y-2 text-sm text-gray-700 mb-6">
                         <li class="flex items-center"><i class="fas fa-star gold-text mr-2"></i>Full Professional Band</li>
                         <li class="flex items-center"><i class="fas fa-microphone gold-text mr-2"></i>Lead & Harmony Vocals</li>
-                        <li class="flex items-center"><i class="fas fa-drum gold-text mr-2"></i>Complete Rhythm Section</li>
-                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Piano & Full Keys Setup</li>
-                        <li class="flex items-center"><i class="fas fa-guitar gold-text mr-2"></i>Lead, Rhythm & Bass Guitars</li>
-                        <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Premium Sound System</li>
-                        <li class="flex items-center"><i class="fas fa-lightbulb gold-text mr-2"></i>Professional Lighting</li>
-                        <li class="flex items-center"><i class="fas fa-headset gold-text mr-2"></i>Sound Technician</li>
+                        <li class="flex items-center"><i class="fas fa-piano gold-text mr-2"></i>Keyboard with percussion</li>
+                        <li class="flex items-center"><i class="fas fa-guitar gold-text mr-2"></i>Bass or Acoustic Guitar</li>
+                        <li class="flex items-center"><i class="fas fa-saxophone-alt gold-text mr-2"></i>LIVE Saxophone <span class="mx-1">OR</span> Talking Drums</li>
+                        <li class="flex items-center"><i class="fas fa-drum gold-text mr-2"></i>LIVE Drum set</li>
+                        <li class="flex items-center"><i class="fas fa-volume-up gold-text mr-2"></i>Venue-Appropriate Sound</li>
                     </ul>
                     <div class="text-center">
                         <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Ultimate Experience</span>
@@ -554,21 +348,25 @@
                 </div>
             </div>
 
-            <!-- Terms -->
+            <!-- Terms (updated to match brochure) -->
             <div class="mt-12 bg-gray-50 rounded-2xl p-8">
                 <h4 class="font-semibold purple-text mb-4 text-center">Important Terms & Conditions</h4>
-                <div class="grid md:grid-cols-3 gap-6 text-sm text-gray-700">
+                <div class="grid md:grid-cols-4 gap-6 text-sm text-gray-700">
+                    <div class="text-center">
+                        <i class="fas fa-hourglass-start gold-text text-2xl mb-2"></i>
+                        <p><strong>Minimum Time:</strong> Minimum of 1 hour</p>
+                    </div>
                     <div class="text-center">
                         <i class="fas fa-map-marked-alt gold-text text-2xl mb-2"></i>
-                        <p><strong>Travel:</strong> Additional charges may apply for locations outside Calgary city limits</p>
+                        <p><strong>Travel:</strong> Terms apply outside Calgary</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-clock gold-text text-2xl mb-2"></i>
-                        <p><strong>Extended Hours:</strong> Additional time beyond package duration available at hourly rates</p>
+                        <p><strong>Extra Hours:</strong> Rates increase with additional hours</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-credit-card gold-text text-2xl mb-2"></i>
-                        <p><strong>Deposit:</strong> 70% deposit required to secure your booking date</p>
+                        <p><strong>Deposit:</strong> 70% required to secure your reservation</p>
                     </div>
                 </div>
             </div>
@@ -581,42 +379,39 @@
             <div class="text-center mb-12">
                 <h3 class="elegant-font text-3xl md:text-4xl font-bold purple-text mb-4">Request Your Booking</h3>
                 <div class="w-24 h-1 gradient-gold mx-auto rounded-full mb-4"></div>
-                <p class="text-lg text-gray-700">
-                    Let us be part of your special moment. Fill out the form below and we'll get back to you within 24 hours.
-                </p>
+                <p class="text-lg text-gray-700">Let us be part of your special moment. Fill out the form below and we'll get back to you within 24 hours.</p>
             </div>
 
             <div class="bg-white bg-opacity-90 rounded-2xl shadow-xl p-8 md:p-12">
-                <!-- UPDATED FORM: only changes are action/method, names, id, and hidden _captcha -->
                 <form id="booking-form" action="https://formsubmit.co/ajax/oilofjoymusic@gmail.com" method="POST" class="space-y-6">
-                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_captcha" value="false" />
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium purple-text mb-2">Full Name *</label>
-                            <input type="text" name="full_name" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Your full name">
+                            <input type="text" name="full_name" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Your full name" />
                         </div>
                         <div>
                             <label class="block text-sm font-medium purple-text mb-2">Email Address *</label>
-                            <input type="email" name="email" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="your@email.com">
+                            <input type="email" name="email" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="your@email.com" />
                         </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium purple-text mb-2">Phone Number *</label>
-                            <input type="tel" name="phone" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="(403) 000-0000">
+                            <input type="tel" name="phone" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="(403) 000-0000" />
                         </div>
                         <div>
                             <label class="block text-sm font-medium purple-text mb-2">Event Date *</label>
-                            <input type="date" name="event_date" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
+                            <input type="date" name="event_date" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" />
                         </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium purple-text mb-2">Event Start Time *</label>
-                            <input type="time" name="event_start_time" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
+                            <input type="time" name="event_start_time" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" />
                         </div>
                         <div>
                             <label class="block text-sm font-medium purple-text mb-2">Expected Duration</label>
@@ -650,12 +445,12 @@
                             <label class="block text-sm font-medium purple-text mb-2">Preferred Package</label>
                             <select name="preferred_package" class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
                                 <option value="">Select a package</option>
-                                <option>Shalom Package ($650)</option>
-                                <option>Hallelujah Package ($1,000)</option>
-                                <option>Shalom II Package ($1,250)</option>
-                                <option>Hallelujah II Package ($1,350)</option>
-                                <option>Rehoboth Package ($1,500)</option>
-                                <option>Goshen Package ($1,850)</option>
+                                <option>Shalom Package I ($850)</option>
+                                <option>Shalom Package II ($1,300)</option>
+                                <option>Halleluyah Package I ($1,550)</option>
+                                <option>Hallelujah Package II ($1,850)</option>
+                                <option>Rehoboth Package ($2,150)</option>
+                                <option>Goshen Package ($2,500)</option>
                                 <option>Custom Quote Needed</option>
                             </select>
                         </div>
@@ -663,7 +458,7 @@
 
                     <div>
                         <label class="block text-sm font-medium purple-text mb-2">Venue Location *</label>
-                        <input type="text" name="venue_location" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Full address or general area (e.g., Calgary NW, Airdrie, etc.)">
+                        <input type="text" name="venue_location" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Full address or general area (e.g., Calgary NW, Airdrie, etc.)" />
                     </div>
 
                     <div>
@@ -676,9 +471,7 @@
                             <i class="fas fa-paper-plane mr-2"></i>
                             Request Booking
                         </button>
-                        <p class="text-sm text-gray-600 mt-4">
-                            We'll respond within 24 hours during business hours
-                        </p>
+                        <p class="text-sm text-gray-600 mt-4">We'll respond within 24 hours during business hours</p>
                     </div>
                 </form>
             </div>
@@ -695,34 +488,19 @@
 
             <div class="grid md:grid-cols-3 gap-8 text-center">
                 <div>
-                    <div class="bg-white bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-phone text-2xl"></i>
-                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"><i class="fas fa-phone text-2xl"></i></div>
                     <h4 class="font-semibold text-xl mb-2">Phone</h4>
-                    <a href="tel:4037026102" class="text-lg hover:text-yellow-300 transition-colors">
-                        (403) 702-6102
-                    </a>
+                    <a href="tel:4037026102" class="text-lg hover:text-yellow-300 transition-colors">(403) 702-6102</a>
                 </div>
-
                 <div>
-                    <div class="bg-white bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-envelope text-2xl"></i>
-                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"><i class="fas fa-envelope text-2xl"></i></div>
                     <h4 class="font-semibold text-xl mb-2">Email</h4>
-                    <a href="mailto:oilofjoymusic@gmail.com" class="text-lg hover:text-yellow-300 transition-colors">
-                        oilofjoymusic@gmail.com
-                    </a>
+                    <a href="mailto:oilofjoymusic@gmail.com" class="text-lg hover:text-yellow-300 transition-colors">oilofjoymusic@gmail.com</a>
                 </div>
-
                 <div>
-                    <div class="bg-white bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-clock text-2xl"></i>
-                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"><i class="fas fa-clock text-2xl"></i></div>
                     <h4 class="font-semibold text-xl mb-2">Contact Hours</h4>
-                    <p class="text-lg">
-                        Weekdays<br>
-                        4:30 PM - 8:00 PM
-                    </p>
+                    <p class="text-lg">Weekdays<br />4:30 PM - 8:00 PM</p>
                 </div>
             </div>
 
@@ -732,12 +510,8 @@
                     <i class="fas fa-music text-2xl opacity-75"></i>
                     <i class="fas fa-heart text-2xl opacity-75"></i>
                 </div>
-                <p class="text-lg opacity-90 mb-2">
-                    <span class="script-font text-2xl">Oil of Joy Music</span>
-                </p>
-                <p class="opacity-75">
-                    Serving Calgary and surrounding areas with excellence in Christian worship music
-                </p>
+                <p class="text-lg opacity-90 mb-2"><span class="script-font text-2xl">Oil of Joy Music</span></p>
+                <p class="opacity-75">Serving Calgary and surrounding areas with excellence in Christian worship music</p>
                 <div class="mt-6 text-sm opacity-60">
                     <p>&copy; 2024 Oil of Joy Music. All rights reserved. | A ministry dedicated to worship through music.</p>
                 </div>
@@ -745,79 +519,49 @@
         </div>
     </footer>
 
-    <!-- Thank You Modal (added) -->
+    <!-- Thank You Modal -->
     <div id="thankyouModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 opacity-0 transition-opacity duration-500">
         <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md text-center border-2 transform scale-95 transition-all duration-500" style="border-color: var(--gold);">
             <h3 class="elegant-font text-2xl font-bold purple-text mb-4">Thank You!</h3>
-            <p class="text-gray-700 mb-6">Your booking request has been received.<br>We’ll contact you within 24 hours.</p>
+            <p class="text-gray-700 mb-6">Your booking request has been received.<br />We’ll contact you within 24 hours.</p>
             <button onclick="closeModal()" class="btn-primary text-white px-6 py-2 rounded-full shadow-md">Close</button>
         </div>
     </div>
 
     <script>
-        // Smooth scrolling for navigation links (unchanged)
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // ---- UPDATED: Form submission via FormSubmit (AJAX) + modal (replaces old alert flow) ----
+        // Form submission via FormSubmit (AJAX) + modal
         const bookingForm = document.getElementById('booking-form');
         if (bookingForm) {
             bookingForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                
-                // Simple validation (kept from your original)
                 const requiredFields = bookingForm.querySelectorAll('[required]');
                 let isValid = true;
-                
                 requiredFields.forEach(field => {
                     if (!field.value.trim()) {
-                        isValid = false;
-                        field.style.borderColor = '#ef4444';
-                    } else {
-                        field.style.borderColor = '#d1d5db';
-                    }
+                        isValid = false; field.style.borderColor = '#ef4444';
+                    } else { field.style.borderColor = '#d1d5db'; }
                 });
-                
-                if (!isValid) {
-                    alert('Please fill in all required fields.');
-                    return;
-                }
-
+                if (!isValid) { alert('Please fill in all required fields.'); return; }
                 try {
-                    const response = await fetch(bookingForm.action, {
-                        method: bookingForm.method,
-                        body: new FormData(bookingForm),
-                        headers: { 'Accept': 'application/json' }
-                    });
-
-                    if (response.ok) {
-                        bookingForm.reset();
-                        showModal();
-                    } else {
-                        alert('Oops! Something went wrong. Please try again.');
-                    }
-                } catch (error) {
-                    alert('Error submitting form. Please try again.');
-                }
+                    const response = await fetch(bookingForm.action, { method: bookingForm.method, body: new FormData(bookingForm), headers: { 'Accept': 'application/json' } });
+                    if (response.ok) { bookingForm.reset(); showModal(); }
+                    else { alert('Oops! Something went wrong. Please try again.'); }
+                } catch (error) { alert('Error submitting form. Please try again.'); }
             });
         }
 
-        // Add fade-in animation to elements as they come into view (unchanged)
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Fade-in on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -825,42 +569,29 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('section').forEach(section => observer.observe(section));
 
-        // Observe all sections for animation (unchanged)
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
+        // Musical notes stagger
+        document.querySelectorAll('.musical-note').forEach((note, index) => { note.style.animationDelay = `${index * 0.5}s`; });
 
-        // Add floating animation to musical notes (unchanged)
-        document.querySelectorAll('.musical-note').forEach((note, index) => {
-            note.style.animationDelay = `${index * 0.5}s`;
-        });
-
-        // Modal helpers (added)
+        // Modal helpers
         function showModal() {
-            const modal = document.getElementById("thankyouModal");
-            modal.classList.remove("hidden");
+            const modal = document.getElementById('thankyouModal');
+            modal.classList.remove('hidden');
             setTimeout(() => {
-                modal.classList.remove("opacity-0");
-                modal.querySelector("div").classList.remove("scale-95");
-                modal.querySelector("div").classList.add("scale-100");
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+                modal.querySelector('div').classList.add('scale-100');
             }, 10);
-
-            // Auto-close after 5 seconds
-            setTimeout(() => {
-                closeModal();
-            }, 5000);
+            setTimeout(() => { closeModal(); }, 5000);
         }
-
         function closeModal() {
-            const modal = document.getElementById("thankyouModal");
-            modal.classList.add("opacity-0");
-            modal.querySelector("div").classList.remove("scale-100");
-            modal.querySelector("div").classList.add("scale-95");
-            setTimeout(() => {
-                modal.classList.add("hidden");
-            }, 500);
+            const modal = document.getElementById('thankyouModal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.remove('scale-100');
+            modal.querySelector('div').classList.add('scale-95');
+            setTimeout(() => { modal.classList.add('hidden'); }, 500);
         }
     </script>
 </body>
